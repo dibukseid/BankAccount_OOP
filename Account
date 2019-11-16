@@ -77,13 +77,13 @@ public class Exercise5{
 	public static void main(String [] args) {
 		//Scanner input = new Scanner(System.in);
 		
-		Account mine = new Account(1122, 20000);
-		mine.setAnnualInterestRate(4.5);
-		mine.withdraw(2500);
-		mine.deposit(3000);
-		System.out.println("Balance in the account is: " + mine.getBalance()); 
-		System.out.println("The Monthy Interest Rate is: " + mine.getMonthlyInterest());
-		System.out.println("Date Created is: " + mine.getDate().toString());
+		Account checking = new Account(1122, 20000);
+		checking.setAnnualInterestRate(4.5);
+		checking.withdraw(2500);
+		checking.deposit(3000);
+		System.out.println("Balance in the account is: " + checking.getBalance()); 
+		System.out.println("The Monthy Interest Rate is: " + checking.getMonthlyInterest());
+		System.out.println("Date Created is: " + checking.getDate().toString());
 		
 	
 	}
