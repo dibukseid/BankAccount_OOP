@@ -1,0 +1,91 @@
+import java.util.*;
+
+class Account{
+	private int id; 
+	private double balance; 
+	private double annualInterestRate; 
+	private Date dateCreated; 
+	
+	public Account() {
+		id = 0; 
+		balance = 0; 
+		annualInterestRate = 0; 
+		dateCreated = new Date(); 
+		
+	}
+	
+	public Account(int id, double balance) {
+		this.id = id; 
+		this.balance = balance;
+		this.dateCreated = new Date();
+	}
+	
+	public void setID(int id) {
+		this.id = id; 
+	}
+	
+	public void setBalance(double balance) {
+		this.balance = balance; 
+	}
+	
+	public void setAnnualInterestRate(double rate) {
+		this.annualInterestRate = rate/100; 
+	}
+	
+	public int getID() {
+		return id; 
+	}
+	
+	public double getBalance() {
+		return balance; 
+		
+	}
+	
+	public double getAnnualInterestRate() {
+		return annualInterestRate; 
+	}
+	
+	public Date getDate() {
+		return dateCreated; 
+	}
+	
+	public double getMonthlyRate() {
+		return this.annualInterestRate / 12; 
+		
+	}
+	
+	public double getMonthlyInterest() {
+		return this.getMonthlyRate() * balance; 
+	}
+	
+	public void withdraw(double amt) {
+		if(amt > balance) {
+			System.out.println("Entered amount is greater that balance."); 
+			System.exit(0);
+		}
+		
+		balance -= amt; 
+		
+	}
+	
+	public void deposit(double amt) {
+		balance += amt; 
+	}
+}
+
+public class Exercise5{
+	public static void main(String [] args) {
+		//Scanner input = new Scanner(System.in);
+		
+		Account mine = new Account(1122, 20000);
+		mine.setAnnualInterestRate(4.5);
+		mine.withdraw(2500);
+		mine.deposit(3000);
+		System.out.println("Balance in the account is: " + mine.getBalance()); 
+		System.out.println("The Monthy Interest Rate is: " + mine.getMonthlyInterest());
+		System.out.println("Date Created is: " + mine.getDate().toString());
+		
+	
+	}
+	
+}
